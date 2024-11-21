@@ -1,0 +1,76 @@
+<div>
+  <div>
+    <div>
+      <div>
+        <select
+          [(ngModel)]="filter.judgeId"
+          (change)="loadCases()"
+        >
+          <option value="">כל התיקים</option>
+          <option value="1">בדיקה</option>
+          <option value="2">השופט אברהם לוי</option>
+          <option value="3">השופטת רחל כהן</option>
+        </select>
+      </div>
+
+      <div>
+        <select
+          [(ngModel)]="filter.status"
+          (change)="loadCases()"
+        >
+          <option [ngValue]="null">כל הסטטוסים</option>
+          <option [ngValue]="1">פעיל</option>
+          <option [ngValue]="2">ממתין לדיון</option>
+          <option [ngValue]="3">סגור</option>
+        </select>
+      </div>
+
+      <div>
+        <select
+          [(ngModel)]="filter.sortBy"
+          (change)="loadCases()"
+        >
+          <option value="openDate">תאריך פתיחה</option>
+          <option value="caseNumber">מספר תיק</option>
+        </select>
+      </div>
+
+      <div>
+        <select
+          [(ngModel)]="filter.sortDirection"
+          (change)="loadCases()"
+        >
+          <option value="desc">יורד</option>
+          <option value="asc">עולה</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>מספר תיק</th>
+          <th>כותרת</th>
+          <th>סטטוס</th>
+          <th>שופט</th>
+          <th>תאריך פתיחה</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let case of cases">
+          <td>{{ case.caseNumber }}</td>
+          <td>{{ case.title }}</td>
+          <td>
+            <span>
+              {{ case.statusDsc }}
+            </span>
+          </td>
+          <td>{{ case.judgeName }}</td>
+          <td>{{ case.openDate | date : "dd/MM/yyyy" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

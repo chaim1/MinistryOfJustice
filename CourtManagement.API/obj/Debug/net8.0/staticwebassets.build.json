@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "i4X5JglHnrenWxWpLd+iAhEkuirs/JaUcnBiWbwMdFw=",
+  "Source": "CourtManagement.API",
+  "BasePath": "_content/CourtManagement.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
